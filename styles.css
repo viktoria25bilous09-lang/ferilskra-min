@@ -1,0 +1,39 @@
+/* Basic, print-friendly resume styles */
+:root{
+  --bg:#ffffff;
+  --text:#222;
+  --accent:#0b66ff;
+  --muted:#555;
+  --max:900px;
+}
+*{box-sizing:border-box}
+body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:var(--bg); color:var(--text); line-height:1.45; padding:24px}
+.page{max-width:var(--max); margin:0 auto; background:transparent}
+.header{border-bottom:1px solid #eee; padding-bottom:12px; margin-bottom:18px}
+.name{font-size:28px; font-weight:700}
+.tagline{color:var(--muted); margin-top:4px}
+.contact{margin-top:8px; color:var(--muted); font-size:14px}
+.content .section{margin-bottom:16px}
+.content h2{font-size:16px; margin:0 0 8px 0; color:var(--accent)}
+.job h3{margin:0; font-size:15px}
+.meta{font-size:13px; color:var(--muted); margin-bottom:6px}
+.chips span{display:inline-block; background:#f1f6ff; color:var(--accent); padding:6px 8px; border-radius:6px; margin:4px 6px 4px 0; font-size:13px}
+.footer{border-top:1px solid #eee; margin-top:20px; padding-top:12px; color:var(--muted); font-size:13px}
+/* Footer external link styling */
+#externalLink{color:var(--accent); text-decoration:none; margin-left:12px; padding:6px 8px; border-radius:6px; font-weight:600}
+#externalLink:hover{background:rgba(11,102,255,0.08); text-decoration:none}
+/* Profile photo (avatar) */
+#profilePhoto{width:84px; height:84px; border-radius:50%; object-fit:cover; float:left; margin-right:14px}
+button#printBtn{background:var(--accent); color:white; border:none; padding:8px 12px; border-radius:6px; cursor:pointer}
+button#printBtn:hover{opacity:0.95}
+@media (max-width:700px){
+  body{padding:18px}
+  .name{font-size:22px}
+}
+/* Print-friendly rules */
+@media print{
+  body{padding:0}
+  button, a[href^="#"]{display:none}
+  .page{box-shadow:none; margin:0}
+  .header, .content, .footer{border:none}
+}
